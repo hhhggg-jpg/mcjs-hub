@@ -223,6 +223,8 @@
   .dlcard b{font-size:13.5px;color:#e8f0e0}
   .dlcard small{font-size:11px;color:#8a9aa8;line-height:1.5}
   .dlcard.muted{opacity:.85}
+  .dlcard .dlsize{margin-top:6px;font-size:10.5px;color:#7dd3fc;letter-spacing:.3px}
+  .dlcard:hover{text-decoration:none}
 
   .totop{position:fixed;right:14px;bottom:calc(20px + env(safe-area-inset-bottom));width:42px;height:42px;border-radius:50%;background:rgba(30,43,58,.92);border:1px solid rgba(255,255,255,.15);color:#cfe9b6;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.4);-webkit-appearance:none;appearance:none}
   .totop.show{display:flex}
@@ -605,11 +607,18 @@
     <h3>📦 下载中心</h3>
     <div class="hint" id="dlHint">本站可提供的下载资源整理在此，便于离线查看与使用。</div>
     <div class="dlgrid" id="dlGrid">
-      <div class="dlcard muted">
-        <span class="ic">🕓</span>
-        <b>下载内容准备中</b>
-        <small>下载资源稍后补充，敬请期待。</small>
-      </div>
+      <a class="dlcard" href="downloads/Remove-Vignette.zip" download>
+        <span class="ic">🧹</span>
+        <b>Remove Vignette（去暗角）</b>
+        <small>去除屏幕边缘暗角与南瓜模糊效果，画面更清晰。通用材质包，各版本通用。</small>
+        <span class="dlsize">约 152 KB · 材质包</span>
+      </a>
+      <a class="dlcard" href="downloads/minecore-1.2.4.zip" download>
+        <span class="ic">🧱</span>
+        <b>MineCore 1.2.4 材质包</b>
+        <small>优化方块纹理风格，对应 Minecraft 1.21.4 版本，包内为 1.21.4 资源包。</small>
+        <span class="dlsize">约 234 KB · 材质包</span>
+      </a>
     </div>
     <button type="button" class="back" id="dlBack">← 返回</button>
   </div>
