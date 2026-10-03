@@ -176,6 +176,9 @@
   .info h2::before{content:"";width:4px;height:15px;background:#ffd84d;border-radius:2px}
   .card{background:rgba(22,31,43,.62);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:15px 16px;margin-bottom:10px;font-size:13px;line-height:1.9;color:#c3d3c8;backdrop-filter:blur(8px)}
   .card b{color:#ffd84d;font-weight:700}
+  .card .cl-item{margin:5px 0;padding-left:0;font-size:12.5px;line-height:1.7;color:#b8c9be}
+  .card .cl-item b{color:#ffd84d}
+  .changelog{border-top:1px dashed rgba(255,255,255,.12);padding-top:6px}
   .card p{margin-bottom:8px}
   .card p:last-child{margin-bottom:0}
   .card a{color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent-border);word-break:break-all}
@@ -785,8 +788,23 @@
 
     <h2>📝 本站更新日志</h2>
     <div class="card muted">
-      <p><b>· 当前版本：</b>线路测速、版本分类与搜索、收藏置顶、最近使用、线路黑名单、版本备注、版本对比、健康巡检、后台预热、本地数据管理、多主题、全版本延迟矩阵、实验参数（快速测速 / 深度预热 / 紧凑模式 / 减少动画 / 并发调节 / 直角模式）、数据备份恢复、下载中心；进阶设置已开放，无需解锁。</p>
+      <p><b>· 当前版本：</b>v4.7.1（线路测速、版本分类搜索、收藏置顶、最近使用、黑名单、备注、对比、健康巡检、后台预热、本地数据管理、多主题、全版本延迟矩阵、实验参数、数据备份恢复、人机验证、下载中心；进阶设置已开放，无需解锁）。</p>
       <p style="margin-top:8px;color:#7a8a9a">说明：真实带宽（MB/s）测速受 CDN 跨域限制无法实现，本站以延迟为唯一指标；PWA 在单文件 share 链接下无法注册 Service Worker，仅提供桌面图标元数据。</p>
+      <div class="changelog" style="margin-top:10px">
+        <p class="cl-item"><b>v4.7.1 · 2026-10-03</b> — 下载中心接入两个材质包：Remove Vignette（去屏幕暗角）与 MineCore 1.2.4（适配 1.21.4 方块材质），重复备份经 MD5 核对后只各保留一份，Cloudflare 主站与 GitHub Pages 两端同步，链接已验证可下载。</p>
+        <p class="cl-item"><b>v4.7 · 2026-09-29</b> — 新增「下载中心」面板，顶部工具栏加下载入口，先做占位，资源后续补充。</p>
+        <p class="cl-item"><b>v4.6.1 · 2026-09-26</b> — 人机验证改为正式上线版：去掉「仅用于测试」提示、清除测试 key，改用本地滑块正式门（须真实拖动到终点才通过）；代码预留 Cloudflare Turnstile 接口，填入 sitekey 即自动启用。Cloudflare Worker 永久主站上线，国内访问更稳定。</p>
+        <p class="cl-item"><b>v4.6 · 2026-09-25</b> — 测速修复：超时放宽到 5 秒、失败自动重试、加随机参数防缓存，解决弱网误判和「关 WiFi 仍在预热」的假象；预热与测速走同一真实探测。探索面板延迟矩阵并发提速约 10 倍，状态色固定为可达即绿、超时才红，不被主题覆盖。新增直角模式，圆角默认调小，修复移动端自适应。</p>
+        <p class="cl-item"><b>v4.5 · 2026-09-24</b> — 新增人机验证门（本地滑块），通过后记入本机，刷新不再重复验证；页面文案去口语化，底部说明统一为「本中转站」口径，不冒充官方。</p>
+        <p class="cl-item"><b>v4.3 · 2026-09-21</b> — 修复小屏手机版式挤出/重叠，顶部横幅字号自适应，页脚与版权声明统一改为「第三方中转站」立场。</p>
+        <p class="cl-item"><b>v4.2 · 2026-09-20</b> — 线路黑名单、版本备注、文本测速报告、操作日志面板、本地数据一键重置；进阶功能改为灰度门控。</p>
+        <p class="cl-item"><b>v4.1 · 2026-09-19</b> — 修复主题切换按钮点击无效，主题弹窗加文字标签，新增「添加到手机桌面」说明，取消开页自动弹出测速面板。</p>
+        <p class="cl-item"><b>v3.2 · 2026-09-18</b> — 分类过滤、最近使用记忆、复制本站链接、显示平均延迟、键盘快捷键、断网自动重预热、NEW 角标、首次打开引导提示。</p>
+        <p class="cl-item"><b>v3.1 · 2026-09-17</b> — 去掉设备/浏览器能力判断，所有版本卡片可点；修复收藏星与版本标签重叠。</p>
+        <p class="cl-item"><b>v3 · 2026-09-16</b> — 版本搜索、收藏置顶、历史延迟记忆、测速实时排序、后台真实预热、一键复制线路/中继地址、健康巡检、测速成绩图导出 PNG。</p>
+        <p class="cl-item"><b>v2 · 2026-09-15</b> — 后台预热真实化，弱网/省流量模式自动降级为只测延迟。</p>
+        <p class="cl-item"><b>v1 · 2026-09-14</b> — 初版上线，11 条 CDN 测速，完成 MCJS 作者授权声明。</p>
+      </div>
     </div>
 
     <div class="license">
